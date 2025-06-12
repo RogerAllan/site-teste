@@ -1,0 +1,110 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: none;
+  backdrop-filter: none;
+}
+
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.3);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand svg {
+  width: 2rem;
+  height: 2rem;
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-weight: 900;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #fbbf24, #fcd34d, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+.nav {
+  display: none;
+  gap: 2rem;
+}
+
+.nav a {
+  color: #d1d5db;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #fbbf24;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-button {
+  color: #d1d5db;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.login-button:hover {
+  color: #fbbf24;
+}
+
+.join-button {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+}
+
+.join-button:hover {
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.25);
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}

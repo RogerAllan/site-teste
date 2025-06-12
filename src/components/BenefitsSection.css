@@ -1,0 +1,127 @@
+/* Container da seção */
+.benefits-section {
+  padding: 5rem 1.5rem;
+  background: #121212; /* fundo escuro elegante */
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container interno centralizado */
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Título principal */
+.benefits-title {
+  font-weight: 900;
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Descrição abaixo do título */
+.benefits-description {
+  font-size: 1.25rem;
+  color: #bbb;
+  max-width: 720px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Grid de cards */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+
+/* Card do benefício */
+.benefit-card {
+  background: rgba(40, 40, 40, 0.5);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Hover suave no card */
+.benefit-card:hover {
+  border-color: #fbbf24; /* amarelo suave */
+  box-shadow:
+    0 8px 20px rgba(251, 191, 36, 0.4),
+    inset 0 0 20px rgba(251, 191, 36, 0.15);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Container do ícone */
+.benefit-icon-wrapper {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6); /* cor padrão roxa */
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.7);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Para permitir personalizar o gradiente pelo JS, aqui só um fallback */
+.benefit-icon-wrapper.purple {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.7);
+}
+.benefit-icon-wrapper.yellow {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.7);
+}
+.benefit-icon-wrapper.green {
+  background: linear-gradient(135deg, #22c55e, #166534);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.7);
+}
+
+/* Ícone */
+.benefit-icon-wrapper svg {
+  width: 3rem;
+  height: 3rem;
+  color: white;
+}
+
+/* Título do benefício */
+.benefit-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Descrição do benefício */
+.benefit-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #bbb;
+  text-align: center;
+}
+
+/* Responsividade extra */
+@media (max-width: 640px) {
+  .benefits-section {
+    padding: 3rem 1rem;
+  }
+  .benefits-title {
+    font-size: 2rem;
+  }
+}
