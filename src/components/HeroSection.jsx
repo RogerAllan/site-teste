@@ -150,7 +150,7 @@ export default function HeroSection() {
             {/* Main Title */}
             <h1 className="hero-title">
               <span className="title-line">Experiencie</span>
-              <span className="title-line gradient-text">A Estratégia</span>
+              <span className="title-line gradient-text"style={{marginTop:0}}>A Estratégia</span>
               <span className="title-line red-text">Final</span>
             </h1>
 
