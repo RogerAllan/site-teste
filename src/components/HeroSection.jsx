@@ -16,6 +16,46 @@ export default function HeroSection() {
       }
     }
 
+    // Cria faíscas brilhantes
+    const sparkContainer = document.getElementById("sparks");
+    if (sparkContainer) {
+      for (let i = 0; i < 30; i++) {
+        const spark = document.createElement("div");
+        spark.className = "spark";
+        spark.style.left = Math.random() * 100 + "%";
+        spark.style.top = Math.random() * 100 + "%";
+        spark.style.animationDelay = Math.random() * 4 + "s";
+        spark.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        sparkContainer.appendChild(spark);
+      }
+    }
+
+    // Função para criar faíscas dinâmicas no movimento do mouse
+    function createDynamicSpark(x, y) {
+      const spark = document.createElement("div");
+      spark.className = "dynamic-spark";
+      spark.style.left = x + "px";
+      spark.style.top = y + "px";
+      document.body.appendChild(spark);
+
+      // Remove a faísca após a animação
+      setTimeout(() => {
+        if (spark.parentNode) {
+          spark.parentNode.removeChild(spark);
+        }
+      }, 1000);
+    }
+
+    // Event listener para movimento do mouse (com throttle)
+    let mouseTimeout;
+    function handleMouseMove(e) {
+      if (Math.random() > 0.95) { // 5% de chance de criar faísca
+        createDynamicSpark(e.clientX, e.clientY);
+      }
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+
     // Função para atualizar o countdown
     function updateCountdown() {
       const now = new Date().getTime();
@@ -54,12 +94,24 @@ export default function HeroSection() {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         console.log("Button clicked:", btn.textContent.trim());
+        
+        // Cria faíscas ao clicar no botão
+        const rect = btn.getBoundingClientRect();
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            createDynamicSpark(
+              rect.left + Math.random() * rect.width,
+              rect.top + Math.random() * rect.height
+            );
+          }, i * 100);
+        }
       });
     });
 
     // Cleanup para evitar memory leaks
     return () => {
       clearInterval(intervalId);
+      document.removeEventListener("mousemove", handleMouseMove);
       buttons.forEach((btn) => {
         btn.removeEventListener("click", () => {});
       });
@@ -69,6 +121,7 @@ export default function HeroSection() {
   return (
     <>
       <div className="bg-particles" id="particles"></div>
+      <div className="bg-sparks" id="sparks"></div>
 
       <section className="hero-section">
         <div className="container">
