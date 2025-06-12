@@ -15,14 +15,32 @@ const CasinoCourse = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-black text-white overflow-hidden">
-      <AnimatedBackground />
       <Header />
-      <HeroSection timeLeft={timeLeft} />
+      
+      <section id="hero">
+        <HeroSection timeLeft={timeLeft} />
+      </section>
+      
       <StatsSection />
-      <TestimonialsSection />
-      <ModulesSection />
-      <BenefitsSection />
-      <PricingSection />
+      
+      <section id="testimonials">
+        <TestimonialsSection />
+      </section>
+      
+      <AnimatedBackground />
+      
+      <section id="modules">
+        <ModulesSection />
+      </section>
+      
+      <section id="benefits">
+        <BenefitsSection />
+      </section>
+      
+      <section id="pricing">
+        <PricingSection />
+      </section>
+      
       <Footer />
     </div>
   );
