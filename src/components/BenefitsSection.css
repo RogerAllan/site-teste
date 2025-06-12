@@ -4,6 +4,7 @@
   background: #121212; /* fundo escuro elegante */
   color: #e0e0e0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 2 ;
 }
 
 /* Container interno centralizado */
@@ -24,14 +25,14 @@
 }
 
 /* Descrição abaixo do título */
-.benefits-description {
-  font-size: 1.25rem;
-  color: #bbb;
-  max-width: 720px;
-  margin: 0 auto 4rem auto;
+.benefit-card .benefit-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #bbb !important;
   text-align: center;
-  line-height: 1.6;
 }
+
+
 
 /* Grid de cards */
 .benefits-grid {

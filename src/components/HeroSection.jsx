@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./HeroSection.css";
-
+import videoSource from "../medias/Roulette_Video_Generated.mp4";
 export default function HeroSection() {
   useEffect(() => {
     // Cria partículas flutuantes
@@ -120,6 +120,26 @@ export default function HeroSection() {
 
   return (
     <>
+ 
+
+      {/* Alternativa com vídeo local */}
+    
+      <div className="video-background">
+  <video
+  className="background-video"
+  autoPlay
+  loop
+  muted
+  playsInline
+  poster="/path/to/poster-image.jpg"
+>
+  <source src={videoSource} type="video/mp4" />
+  Your browser does not support HTML5 video.
+</video>
+        <div className="video-overlay"></div>
+      </div>
+      
+
       <div className="bg-particles" id="particles"></div>
       <div className="bg-sparks" id="sparks"></div>
 
@@ -150,7 +170,7 @@ export default function HeroSection() {
             {/* Main Title */}
             <h1 className="hero-title">
               <span className="title-line">Experiencie</span>
-              <span className="title-line gradient-text"style={{marginTop:0}}>A Estratégia</span>
+              <span className="title-line gradient-text" style={{marginTop:0}}>A Estratégia</span>
               <span className="title-line red-text">Final</span>
             </h1>
 

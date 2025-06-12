@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTimer } from './hooks/useTimer';
-import AnimatedBackground from './components/AnimatedBackground';
+
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import StatsSection from './components/StatsSection';
@@ -27,15 +27,12 @@ const CasinoCourse = () => {
         <TestimonialsSection />
       </section>
       
-      <AnimatedBackground />
+   
       
       <section id="modules">
         <ModulesSection />
       </section>
-      
-      <section id="benefits">
-        <BenefitsSection />
-      </section>
+    
       
       <section id="pricing">
         <PricingSection />

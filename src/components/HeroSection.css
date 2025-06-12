@@ -448,3 +448,69 @@ body {
     font-size: 0.9rem;
   }
 }
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0 ;
+  
+}
+
+/* Vídeo local */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.4) contrast(1.2) saturate(0.8);
+}
+
+/* YouTube Background */
+.youtube-background {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: none;
+  filter: brightness(0.5) contrast(1.1) saturate(0.7);
+}
+
+.video-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 12, 12, 0.7) 0%,
+    rgba(26, 26, 26, 0.5) 50%,
+    rgba(12, 12, 12, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* Fallback para quando o vídeo não carrega */
+.video-background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  z-index: 1;
+}
